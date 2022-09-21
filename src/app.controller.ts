@@ -10,13 +10,13 @@ export class AppController {
   @Get('/graphic-1')
   async getGraphs1() {
     const tonality = await pool.query(
-      'SELECT DISTINCT tonality FROM nlp."v_csv_1" WHERE tonality IS NOT NULL',
+      'SELECT DISTINCT tonality FROM nlp_dds."v_csv_1" WHERE tonality IS NOT NULL',
     );
     const source = await pool.query(
-      'SELECT DISTINCT source FROM nlp."v_csv_1" WHERE source IS NOT NULL',
+      'SELECT DISTINCT source FROM nlp_dds."v_csv_1" WHERE source IS NOT NULL',
     );
     const credit_type = await pool.query(
-      'SELECT DISTINCT credit_type FROM nlp."v_csv_1" WHERE credit_type IS NOT NULL',
+      'SELECT DISTINCT credit_type FROM nlp_dds."v_csv_1" WHERE credit_type IS NOT NULL',
     );
     return {
       tonality: tonality.rows.map(({ tonality }) => tonality),
@@ -28,13 +28,13 @@ export class AppController {
   @Get('/graphic-2')
   async getGraphs2() {
     const tonality = await pool.query(
-      'SELECT DISTINCT tonality FROM nlp."v_csv_5" WHERE tonality IS NOT NULL',
+      'SELECT DISTINCT tonality FROM nlp_dds."v_csv_5" WHERE tonality IS NOT NULL',
     );
     const source = await pool.query(
-      'SELECT DISTINCT source FROM nlp."v_csv_5" WHERE source IS NOT NULL',
+      'SELECT DISTINCT source FROM nlp_dds."v_csv_5" WHERE source IS NOT NULL',
     );
     const credit_type = await pool.query(
-      'SELECT DISTINCT credit_type FROM nlp."v_csv_5" WHERE credit_type IS NOT NULL',
+      'SELECT DISTINCT credit_type FROM nlp_dds."v_csv_5" WHERE credit_type IS NOT NULL',
     );
 
     return {
@@ -47,10 +47,10 @@ export class AppController {
   @Get('/graphic-3')
   async getGraphs3() {
     const source = await pool.query(
-      'SELECT DISTINCT source FROM nlp."v_csv_6" WHERE source IS NOT NULL',
+      'SELECT DISTINCT source FROM nlp_dds."v_csv_6" WHERE source IS NOT NULL',
     );
     const credit_type = await pool.query(
-      'SELECT DISTINCT credit_type FROM nlp."v_csv_6" WHERE credit_type IS NOT NULL',
+      'SELECT DISTINCT credit_type FROM nlp_dds."v_csv_6" WHERE credit_type IS NOT NULL',
     );
 
     return {
